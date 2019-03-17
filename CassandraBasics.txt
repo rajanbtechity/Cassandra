@@ -1,0 +1,36 @@
+1. add JAVA_HOME in cassandra.bat file
+set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_201
+
+Here we didn't use the path till \bin as %JAVA_HOME%\bin\java command used in cassandra scripts fails.
+
+2. add JAVA_HOME in nodetool.bat
+set JAVA_HOME=C:\Program Files\Java\jdk1.8.0_201
+
+
+3. We need python 2.7 for cassandra 3.11
+If we use python 3+ then we get error as
+
+except ImportError, e:
+                      ^
+SyntaxError: invalid syntax
+
+
+4. Add python to path in environment variables
+
+5. start cassandra in foreground using 
+cassandra -f
+
+6. check cassandra status
+nodetool status
+
+7. cqlsh
+
+8. describe keyspaces;
+
+9. create keyspace SOI with replication ={'class':'SimpleStrategy','replication_factor':1};
+
+10. use soi;
+
+11. create table student(id int primary key,name text);
+
+12  insert into student(id,name) values(1,'Rajan Kumar');
